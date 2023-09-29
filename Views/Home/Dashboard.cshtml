@@ -1,0 +1,29 @@
+@{
+    ViewData["Title"] = "Dashboard";
+}
+
+<div class="mt-5 mx-auto w-75">
+    <div class="card shadow">
+        <div class="card-header">
+            <h1 class="text-center text-primary-emphasis">Coding Dojo Survey</h1>
+        </div>
+        <div class="card-body">
+            <form action="Process" method="post">
+                <input  type="hidden" name="operation" value="increment">
+                <button type="submit" class="btn b">+ 1</button>
+            </form>
+            <form action="Process" method="post">
+                <input  type="hidden" name="operation" value="decrement">
+                <button type="submit" class="btn b">- 1</button>
+            </form>
+            <form action="Process" method="post">
+                <input  type="hidden" name="operation" value="double">
+                <button type="submit" class="btn b">x 2</button>
+            </form>
+            <form action="Process" method="post">
+                <input  type="hidden" name="operation" value="random">
+                <button type="submit" class="btn b">+ Random</button>
+            </form>
+        </div>
+    </div>
+</div>
