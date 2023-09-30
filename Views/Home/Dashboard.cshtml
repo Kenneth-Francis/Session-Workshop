@@ -1,29 +1,42 @@
 @{
     ViewData["Title"] = "Dashboard";
+    int? DisplayNum = Context.Session.GetInt32("DisplayNum");
 }
 
-<div class="mt-5 mx-auto w-75">
+<div class="mt-5 mx-auto w-50">
     <div class="card shadow">
         <div class="card-header">
-            <h1 class="text-center text-primary-emphasis">Coding Dojo Survey</h1>
+            <h1 class="text-center text-primary-emphasis">@DisplayNum</h1>
         </div>
         <div class="card-body">
-            <form action="Process" method="post">
-                <input  type="hidden" name="operation" value="increment">
-                <button type="submit" class="btn b">+ 1</button>
-            </form>
-            <form action="Process" method="post">
-                <input  type="hidden" name="operation" value="decrement">
-                <button type="submit" class="btn b">- 1</button>
-            </form>
-            <form action="Process" method="post">
-                <input  type="hidden" name="operation" value="double">
-                <button type="submit" class="btn b">x 2</button>
-            </form>
-            <form action="Process" method="post">
-                <input  type="hidden" name="operation" value="random">
-                <button type="submit" class="btn b">+ Random</button>
-            </form>
+            <div class="row mb-4">
+                <div class="col">
+                    <form action="Process" method="post">
+                        <input  type="hidden" name="Operation" value="increment">
+                        <button type="submit" class="btn btn-warning w-100">+ 1</button>
+                    </form>
+                </div>
+                <div class="col">
+                    <form action="Process" method="post">
+                        <input  type="hidden" name="Operation" value="decrement">
+                        <button type="submit" class="btn btn-primary w-100">- 1</button>
+                    </form>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col">
+                    <form action="Process" method="post">
+                        <input  type="hidden" name="Operation" value="double">
+                        <button type="submit" class="btn btn-danger w-100">x 2</button>
+                    </form>
+                </div>
+                <div class="col">
+                    <form action="Process" method="post">
+                        <input  type="hidden" name="Operation" value="random">
+                        <button type="submit" class="btn btn-success w-100">+ Random</button>
+                    </form>
+                </div>
+            </div>
         </div>
     </div>
 </div>
